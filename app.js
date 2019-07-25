@@ -7,6 +7,7 @@ var port = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended: true}))
+app.use(express.static(__dirname + '/public'));
 
 // use mongodb and mongoose
 mongoose.connect('mongodb://localhost/restful-blog-app', {useNewUrlParser: true})
@@ -34,15 +35,16 @@ app.get('/blogs', (req, res)=>{
     })
 })
 
+// NEW
+app.get('/blogs/new', (req, res)=>{
+	res.render('new')
+})
+
 
 // CREATE
 app.post('/blogs', (req, res)=>{
-    const newBlog = {
-        title: req.body.title,
-        image: req.body.image,
-        body: req.body.content
-    }
-    Blog.create(newBlog, (err, results)=>{
+    Blog.create(req.body.blog, (err, results)=>{
+        if(err) throw err;
         console.log("Add Successfully..!!")
     })
     res.redirect('/blogs')

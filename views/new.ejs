@@ -1,0 +1,16 @@
+<% include partials\header.ejs %>
+
+<div class="ui main text container segment">
+    <h1 class="ui huge header">Create New Blog</h1>
+    <form action="/blogs" method="POST" class="ui form">
+        <input type="text" name="blog[title]" placeholder="Name" class="field">
+        <input type="text" name="blog[image]" placeholder="Image Url" class="field">
+        <textarea name="blog[body]" id=""
+        placeholder="Add a description"
+        class="field"></textarea>
+        <button type="submit" class="ui button">Create</button>
+    </form>
+</div>
+
+<a href="/blogs">Back</a>
+<% include partials\footer.ejs %>
