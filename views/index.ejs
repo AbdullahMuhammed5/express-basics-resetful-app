@@ -3,14 +3,11 @@
 <h1>Blog Page</h1>
 
 <% blogs.forEach( function(element, index) { %>
-    <div class="col-md-4 col-sm-6">
-        <figure class="figure">
-            <a href="/blog/<%=element._id%>">
-                <img src="<%= element.image%>" class="figure-img img-fluid">
-            </a>
-            <h1 class="figure-caption text-center"><%= element.title %></h1>
-        </figure>
-        <p><%= element.body %></p>
+    <div class="">
+        <img src="<%= element.image%>" class="figure-img img-fluid">
+        <h1 class="figure-caption text-center"><%= element.title %></h1>
+        <p><%= element.body.substring(0, 100)+"..." %></p>
+        <a href="/blogs/<%=element._id%>">Read More</a>
     </div>
 <% }) %>
 

@@ -40,7 +40,6 @@ app.get('/blogs/new', (req, res)=>{
 	res.render('new')
 })
 
-
 // CREATE
 app.post('/blogs', (req, res)=>{
     Blog.create(req.body.blog, (err, results)=>{
@@ -48,6 +47,14 @@ app.post('/blogs', (req, res)=>{
         console.log("Add Successfully..!!")
     })
     res.redirect('/blogs')
+})
+
+// SHOW
+app.get('/blogs/:id', (req, res)=>{
+    Blog.findById(req.params.id, (err, results)=>{
+        if (err) throw err;
+        res.render('details', { blog: results })
+    })
 })
 
 app.listen(port, ()=>{
