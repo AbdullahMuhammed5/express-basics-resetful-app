@@ -1,13 +1,32 @@
 <% include ./partials/header %>
 
-<h1>Blog Page</h1>
+
+<h1 class="ui huge header">Blog Page</h1>
 
 <% blogs.forEach( function(element, index) { %>
-    <div class="">
-        <img src="<%= element.image%>" class="figure-img img-fluid">
-        <h1 class="figure-caption text-center"><%= element.title %></h1>
-        <p><%= element.body.substring(0, 100)+"..." %></p>
-        <a href="/blogs/<%=element._id%>">Read More</a>
+    <div class="ui top attached segment">
+        <div class="ui divided items">
+            <div class="item">
+                <div class="image">
+                    <img src="<%= element.image%>" class="figure-img img-fluid">
+                </div>
+                <div class="content">
+                    <a class="header" href="/blogs/<% element._id %>"><%= element.title %></a>
+                    <div class="meta">
+                        <span><%= element.created_at.toDateString()%></span>    
+                    </div>
+                    <div class="description">
+                        <p><%= element.body.substring(0, 100)+"..." %></p>
+                    </div>
+                    <div class="extra">
+                        <a href="/blogs/<%=element._id%>" class="ui floated violet button">
+                            Read More
+                            <i class="right chevron icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 <% }) %>
 

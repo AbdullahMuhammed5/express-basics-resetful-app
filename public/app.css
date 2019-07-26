@@ -1,3 +1,7 @@
 .ui.form .field{
     margin-bottom: 20px !important;
 }
+
+#delete{
+    display: inline;
+}
