@@ -1,9 +1,11 @@
 <% include ./partials/header %>
 
 
-<h1 class="ui huge header">Blog Page</h1>
+<div class="ui main text container">
 
-<% blogs.forEach( function(element, index) { %>
+    <h1 class="ui huge header">Blog Page</h1>
+    
+    <% blogs.forEach( function(element, index) { %>
     <div class="ui top attached segment">
         <div class="ui divided items">
             <div class="item">
@@ -28,8 +30,8 @@
             </div>
         </div>
     </div>
-<% }) %>
+    <% }) %>
+</div>
 
-<a href="/blogs/new">Ctaete new blog</a>
 
 <% include ./partials/footer %>

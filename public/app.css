@@ -1,7 +1,23 @@
 .ui.form .field{
     margin-bottom: 20px !important;
 }
-
 #delete{
     display: inline;
+}
+.attached.ui{
+    widows: 60%;
+}
+#details-container .image{
+    margin-bottom: 20px;
+}
+.content span{
+    color: #656666;
+    font-size: 12px; 
+}
+#post-body{
+    margin: 30px 0;
+}
+
+#details-container .icon{
+    margin-left: 5px;
 }
