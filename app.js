@@ -28,7 +28,7 @@ var Blog = mongoose.model("Blog", blogSchema)
 // Routes
 
 app.get('/', (req, res)=>{
-	res.redirect('index')
+	res.redirect('blogs')
 })
 
 // INDEX
